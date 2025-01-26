@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+
+		<PackageType>Template</PackageType>
+		<PackageId>MintPlayer.Dotnet.Templates</PackageId>
+		<PackageVersion>9.0.0</PackageVersion>
+		<Title>.NET Templates</Title>
+		<Authors>Pieterjan De Clippel</Authors>
+		<Company>MintPlayer</Company>
+		<Description>Templates for .NET Core</Description>
+		<PackageTags>Templates;IdentityServer;Single-sign-on;Server-side rendering;SEO</PackageTags>
+		<RepositoryType>Git</RepositoryType>
+		<RepositoryUrl>https://github.com/MintPlayer/MintPlayer.Dotnet.Templates</RepositoryUrl>
+
+		<IncludeContentInPack>true</IncludeContentInPack>
+		<IncludeBuildOutput>false</IncludeBuildOutput>
+		<ContentTargetFolders>content</ContentTargetFolders>
+		<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+		<NoDefaultExcludes>true</NoDefaultExcludes>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- Don't compile files, but include them as content -->
+		<Content Include="content\**\*;content\**\.browserlistrc;content\**\.editorconfig;content\**\.gitignore" Exclude="content\**\node_modules\**\*;content\**\bin\**\*;content\**\obj\**\*" />
+		
+		<!-- Don't pack the node_modules -->
+		<None Remove="content\**\node_modules\**\*;content\**\bin\**\*;content\**\obj\**\*" />
+	</ItemGroup>
+
+	<PropertyGroup>
+		<!-- Lists the versions of dependencies not built in this repo. Packages produced from this repo should be listed as a PackageVersionVariableReference.  -->
+		<GeneratedContentProperties>
+			DefaultNetCoreTargetFramework=$(DefaultNetCoreTargetFramework);
+		</GeneratedContentProperties>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<GeneratedContent Include="generation/MintPlayer.Dotnet.WebApplication.Web.csproj.in" OutputPath="content/WebApplication/Web/MintPlayer.Dotnet.WebApplication.Web.csproj" />
+	</ItemGroup>
+
+</Project>
