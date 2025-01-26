@@ -32,6 +32,6 @@
 		-->
 	</ItemGroup>
 
-	<Import Project="eng/GenerateContent.targets" Condition=" '$(RepoRoot)' == '' " />
-	<Import Project="eng/Packaging.targets" Condition=" '$(RepoRoot)' == '' " />
+	<Import Project="MintPlayer.Dotnet.Templates/eng/GenerateContent.targets" Condition=" '$(RepoRoot)' == '' " />
+	<Import Project="MintPlayer.Dotnet.Templates/eng/Packaging.targets" Condition=" '$(RepoRoot)' == '' " />
 </Project>

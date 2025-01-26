@@ -16,6 +16,6 @@
 		<Serviceable>true</Serviceable>
 	</PropertyGroup>
 
-	<Import Project="eng/TemplateProjects.props" Condition=" '$(RepoRoot)' == '' " />
-	<Import Project="eng/Versions.props" Condition=" '$(RepoRoot)' == '' " />
+	<Import Project="MintPlayer.Dotnet.Templates/eng/TemplateProjects.props" Condition=" '$(RepoRoot)' == '' " />
+	<Import Project="MintPlayer.Dotnet.Templates/eng/Versions.props" Condition=" '$(RepoRoot)' == '' " />
 </Project>
