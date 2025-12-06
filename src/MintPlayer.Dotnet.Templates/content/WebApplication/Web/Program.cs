@@ -176,7 +176,7 @@ builder.Services.AddOpenSearch<MintPlayer.Dotnet.WebApplication.Web.Services.Ope
 #endif
 
 // Configure SPA static files
-builder.Services.AddSpaStaticFiles(configuration =>
+builder.Services.AddSpaStaticFilesImproved(configuration =>
 {
     configuration.RootPath = "ClientApp/dist/client-app/browser";
 });
@@ -218,7 +218,7 @@ app.UseAuthorization();
 #endif
 
 #if (EnableXsrf)
-app.UseXsrfProtection();
+global::MintPlayer.AspNetCore.SpaServices.Xsrf.AntiforgeryExtensions.UseAntiforgery(app);
 #endif
 
 app.MapControllerRoute(
