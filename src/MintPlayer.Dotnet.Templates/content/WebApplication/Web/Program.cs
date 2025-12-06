@@ -1,4 +1,5 @@
 using System.Text.RegularExpressions;
+using MintPlayer.AspNetCore.SpaServices.Extensions;
 using MintPlayer.AspNetCore.SpaServices.Routing;
 #if (UseSsr)
 using MintPlayer.AspNetCore.SpaServices.Prerendering;
@@ -202,7 +203,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 if (!app.Environment.IsDevelopment())
 {
-    app.UseSpaStaticFiles();
+    app.UseSpaStaticFilesImproved();
 }
 
 #if (UseWebMarkupMin)
@@ -224,7 +225,7 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller}/{action=Index}/{id?}");
 
-app.UseSpa(spa =>
+app.UseSpaImproved(spa =>
 {
     spa.Options.SourcePath = "ClientApp";
 #if (UseSsr)
