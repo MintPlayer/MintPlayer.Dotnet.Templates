@@ -17,14 +17,14 @@
 
   <ItemGroup>
     <!-- Core packages -->
-    <PackageReference Include="Microsoft.AspNetCore.SpaProxy" Version="${DefaultNetCoreTargetFramework}.0" />
-    <PackageReference Include="MintPlayer.AspNetCore.SpaServices.Routing" Version="${DefaultNetCoreTargetFramework}.0" />
-    <PackageReference Include="MintPlayer.AspNetCore.NoSniff" Version="${DefaultNetCoreTargetFramework}.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaProxy" Version="${DefaultNetCoreTargetFrameworkVersion}.0" />
+    <PackageReference Include="MintPlayer.AspNetCore.SpaServices.Routing" Version="${DefaultNetCoreTargetFrameworkVersion}.0" />
+    <PackageReference Include="MintPlayer.AspNetCore.NoSniff" Version="${DefaultNetCoreTargetFrameworkVersion}.0" />
   </ItemGroup>
 
   <!--#if (UseSsr) -->
   <ItemGroup>
-    <PackageReference Include="MintPlayer.AspNetCore.SpaServices.Prerendering" Version="${DefaultNetCoreTargetFramework}.0" />
+    <PackageReference Include="MintPlayer.AspNetCore.SpaServices.Prerendering" Version="${DefaultNetCoreTargetFrameworkVersion}.0" />
   </ItemGroup>
   <!--#endif -->
 
@@ -36,13 +36,13 @@
 
   <!--#if (EnableXsrf) -->
   <ItemGroup>
-    <PackageReference Include="MintPlayer.AspNetCore.SpaServices.Xsrf" Version="${DefaultNetCoreTargetFramework}.0" />
+    <PackageReference Include="MintPlayer.AspNetCore.SpaServices.Xsrf" Version="${DefaultNetCoreTargetFrameworkVersion}.0" />
   </ItemGroup>
   <!--#endif -->
 
   <!--#if (EnableOpenSearch) -->
   <ItemGroup>
-    <PackageReference Include="MintPlayer.AspNetCore.OpenSearch" Version="${DefaultNetCoreTargetFramework}.0" />
+    <PackageReference Include="MintPlayer.AspNetCore.OpenSearch" Version="${DefaultNetCoreTargetFrameworkVersion}.0" />
   </ItemGroup>
   <!--#endif -->
 
@@ -61,38 +61,38 @@
 
   <!--#if (UseAnyIdentityProvider) -->
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="${DefaultNetCoreTargetFramework}.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="${DefaultNetCoreTargetFramework}.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="${DefaultNetCoreTargetFrameworkVersion}.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="${DefaultNetCoreTargetFrameworkVersion}.0" />
   </ItemGroup>
   <!--#endif -->
 
   <!--#if (ExternalLoginMicrosoft) -->
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount" Version="${DefaultNetCoreTargetFramework}.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount" Version="${DefaultNetCoreTargetFrameworkVersion}.0" />
   </ItemGroup>
   <!--#endif -->
 
   <!--#if (ExternalLoginGoogle) -->
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="${DefaultNetCoreTargetFramework}.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="${DefaultNetCoreTargetFrameworkVersion}.0" />
   </ItemGroup>
   <!--#endif -->
 
   <!--#if (ExternalLoginFacebook) -->
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="${DefaultNetCoreTargetFramework}.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="${DefaultNetCoreTargetFrameworkVersion}.0" />
   </ItemGroup>
   <!--#endif -->
 
   <!--#if (ExternalLoginX) -->
   <ItemGroup>
-    <PackageReference Include="AspNet.Security.OAuth.Twitter" Version="${DefaultNetCoreTargetFramework}.0" />
+    <PackageReference Include="AspNet.Security.OAuth.Twitter" Version="${DefaultNetCoreTargetFrameworkVersion}.0" />
   </ItemGroup>
   <!--#endif -->
 
   <!--#if (ExternalLoginLinkedIn) -->
   <ItemGroup>
-    <PackageReference Include="AspNet.Security.OAuth.LinkedIn" Version="${DefaultNetCoreTargetFramework}.0" />
+    <PackageReference Include="AspNet.Security.OAuth.LinkedIn" Version="${DefaultNetCoreTargetFrameworkVersion}.0" />
   </ItemGroup>
   <!--#endif -->
 

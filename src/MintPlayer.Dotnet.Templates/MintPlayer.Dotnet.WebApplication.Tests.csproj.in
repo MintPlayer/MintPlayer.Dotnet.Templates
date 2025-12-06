@@ -25,12 +25,12 @@
 
   <!--#if (UseAnyIdentityProvider) -->
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="${DefaultNetCoreTargetFramework}.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="${DefaultNetCoreTargetFrameworkVersion}.0" />
   </ItemGroup>
   <!--#endif -->
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="${DefaultNetCoreTargetFramework}.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="${DefaultNetCoreTargetFrameworkVersion}.0" />
   </ItemGroup>
 
   <ItemGroup>

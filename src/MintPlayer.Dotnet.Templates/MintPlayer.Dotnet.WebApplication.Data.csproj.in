@@ -12,8 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="${DefaultNetCoreTargetFramework}.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="${DefaultNetCoreTargetFramework}.0">
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="${DefaultNetCoreTargetFrameworkVersion}.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="${DefaultNetCoreTargetFrameworkVersion}.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -21,25 +21,25 @@
 
   <!--#if (UseSqlServer) -->
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="${DefaultNetCoreTargetFramework}.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="${DefaultNetCoreTargetFrameworkVersion}.0" />
   </ItemGroup>
   <!--#endif -->
 
   <!--#if (UsePostgreSQL) -->
   <ItemGroup>
-    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="${DefaultNetCoreTargetFramework}.0" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="${DefaultNetCoreTargetFrameworkVersion}.0" />
   </ItemGroup>
   <!--#endif -->
 
   <!--#if (UseSQLite) -->
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="${DefaultNetCoreTargetFramework}.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="${DefaultNetCoreTargetFrameworkVersion}.0" />
   </ItemGroup>
   <!--#endif -->
 
   <!--#if (UseAnyIdentityProvider) -->
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="${DefaultNetCoreTargetFramework}.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="${DefaultNetCoreTargetFrameworkVersion}.0" />
   </ItemGroup>
   <!--#endif -->
 
