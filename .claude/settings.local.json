@@ -5,7 +5,12 @@
       "Bash(dotnet package search:*)",
       "Bash(curl:*)",
       "Bash(dotnet new:*)",
-      "Bash(dotnet sln:*)"
+      "Bash(dotnet sln:*)",
+      "Bash(git check-ignore:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nAdd missing .csproj files to template\n\nRemove content/.gitignore which was blocking .csproj files from being committed.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git revert:*)",
+      "Bash(dotnet build:*)"
     ],
     "deny": [],
     "ask": []

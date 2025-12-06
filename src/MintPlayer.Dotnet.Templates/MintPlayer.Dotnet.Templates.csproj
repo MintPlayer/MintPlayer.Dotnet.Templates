@@ -26,10 +26,23 @@
 	<ItemGroup>
 		<!-- Don't compile files, but include them as content -->
 		<Content Include="content\**\*;content\**\.browserlistrc;content\**\.editorconfig;content\**\.gitignore" Exclude="content\**\node_modules\**\*;content\**\bin\**\*;content\**\obj\**\*" />
-		
+
 		<!-- Don't pack the node_modules -->
 		<None Remove="content\**\node_modules\**\*;content\**\bin\**\*;content\**\obj\**\*" />
 	</ItemGroup>
 
+	<PropertyGroup>
+		<!-- Lists the versions of dependencies not built in this repo. -->
+		<GeneratedContentProperties>
+			DefaultNetCoreTargetFramework=$(DefaultNetCoreTargetFramework);
+		</GeneratedContentProperties>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<GeneratedContent Include="MintPlayer.Dotnet.WebApplication.Web.csproj.in" OutputPath="content/WebApplication/Web/MintPlayer.Dotnet.WebApplication.Web.csproj" />
+		<GeneratedContent Include="MintPlayer.Dotnet.WebApplication.Data.csproj.in" OutputPath="content/WebApplication/Data/MintPlayer.Dotnet.WebApplication.Data.csproj" />
+		<GeneratedContent Include="MintPlayer.Dotnet.WebApplication.Dtos.csproj.in" OutputPath="content/WebApplication/Dtos/MintPlayer.Dotnet.WebApplication.Dtos.csproj" />
+		<GeneratedContent Include="MintPlayer.Dotnet.WebApplication.Tests.csproj.in" OutputPath="content/WebApplication/Tests/MintPlayer.Dotnet.WebApplication.Tests.csproj" />
+	</ItemGroup>
 
 </Project>
