@@ -49,7 +49,7 @@ jobs:
     - name: Create project from template
       run: |
         dotnet new sln
-        dotnet new web-extended
+        dotnet new mintplayer-web
         dotnet sln TestProject.sln add Web/TestProject.Web.csproj
         dotnet build
       working-directory: tmp/TestProject
