@@ -3,7 +3,9 @@
     "allow": [
       "Bash(dotnet restore:*)",
       "Bash(dotnet package search:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(dotnet new:*)",
+      "Bash(dotnet sln:*)"
     ],
     "deny": [],
     "ask": []

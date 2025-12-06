@@ -22,6 +22,16 @@
   "forms": {
     "lowerCase": {
       "identifier": "lowerCase"
+    },
+    "append:DbContext": {
+      "identifier": "replace",
+      "pattern": "$",
+      "replacement": "DbContext"
+    },
+    "append:Options": {
+      "identifier": "replace",
+      "pattern": "$",
+      "replacement": "Options"
     }
   },
   "symbols": {
