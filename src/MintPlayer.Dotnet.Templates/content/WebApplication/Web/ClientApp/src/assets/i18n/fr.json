@@ -1,0 +1,54 @@
+{
+  "LANGUAGE": "Langue",
+  "NAV": {
+    "HOME": "Accueil",
+    "LOGIN": "Connexion",
+    "REGISTER": "S'inscrire"
+  },
+  "HOME": {
+    "WELCOME": "Bienvenue sur MintPlayer.Dotnet.WebApplication",
+    "DESCRIPTION": "Ceci est un modèle pour créer des applications ASP.NET Core avec Angular."
+  },
+  "ACCOUNT": {
+    "EMAIL": "E-mail",
+    "PASSWORD": "Mot de passe",
+    "CONFIRM_PASSWORD": "Confirmer le mot de passe",
+    "FIRST_NAME": "Prénom",
+    "LAST_NAME": "Nom",
+    "REMEMBER_ME": "Se souvenir de moi",
+    "CURRENT_PASSWORD": "Mot de passe actuel",
+    "NEW_PASSWORD": "Nouveau mot de passe",
+    "CONFIRM_NEW_PASSWORD": "Confirmer le nouveau mot de passe",
+    "LOGIN": {
+      "TITLE": "Connexion",
+      "SUBMIT": "Se connecter",
+      "NO_ACCOUNT": "Vous n'avez pas de compte?",
+      "REGISTER_LINK": "Inscrivez-vous ici"
+    },
+    "REGISTER": {
+      "TITLE": "Inscription",
+      "SUBMIT": "S'inscrire",
+      "HAS_ACCOUNT": "Vous avez déjà un compte?",
+      "LOGIN_LINK": "Connectez-vous ici"
+    },
+    "PROFILE": {
+      "TITLE": "Profil",
+      "UPDATE": "Mettre à jour le profil",
+      "CHANGE_PASSWORD": "Changer le mot de passe",
+      "CHANGE_PASSWORD_SUBMIT": "Changer le mot de passe"
+    },
+    "TWO_FACTOR": {
+      "TITLE": "Authentification à deux facteurs",
+      "ENABLED": "L'authentification à deux facteurs est activée.",
+      "NOT_ENABLED": "L'authentification à deux facteurs n'est pas activée. Activez-la pour plus de sécurité.",
+      "DISABLE": "Désactiver 2FA",
+      "SETUP": "Configurer 2FA",
+      "SCAN_QR": "Scanner le code QR",
+      "SCAN_INSTRUCTIONS": "Scannez ce code QR avec votre application d'authentification (Google Authenticator, Microsoft Authenticator, etc.)",
+      "MANUAL_KEY": "Ou entrez cette clé manuellement:",
+      "VERIFICATION_CODE": "Code de vérification",
+      "ENTER_CODE": "Entrez le code à 6 chiffres de votre application d'authentification",
+      "VERIFY_ENABLE": "Vérifier et activer"
+    }
+  }
+}

@@ -1,0 +1,85 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Web/Dockerfile
+    ports:
+      - "5000:80"
+      - "5001:443"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:80;https://+:443
+//#if (UseSqlServer)
+      - ConnectionStrings__DefaultConnection=Server=db;Database=MintPlayer.Dotnet.WebApplication;User Id=sa;Password=YourStrong!Passw0rd;TrustServerCertificate=True
+//#elif (UsePostgreSQL)
+      - ConnectionStrings__DefaultConnection=Host=db;Database=MintPlayer.Dotnet.WebApplication;Username=postgres;Password=postgres
+//#elif (UseSQLite)
+      - ConnectionStrings__DefaultConnection=Data Source=/app/data/MintPlayer.Dotnet.WebApplication.db
+//#endif
+//#if (UseElasticSearch)
+      - ElasticSearch__Active=true
+      - ElasticSearch__Url=http://elasticsearch:9200
+//#endif
+    depends_on:
+//#if (UseSqlServer)
+      - db
+//#elif (UsePostgreSQL)
+      - db
+//#endif
+//#if (UseElasticSearch)
+      - elasticsearch
+//#endif
+//#if (UseSQLite)
+    volumes:
+      - sqlitedata:/app/data
+//#endif
+
+//#if (UseSqlServer)
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=YourStrong!Passw0rd
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqldata:/var/opt/mssql
+//#elif (UsePostgreSQL)
+  db:
+    image: postgres:16-alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=MintPlayer.Dotnet.WebApplication
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+//#endif
+
+//#if (UseElasticSearch)
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.11.0
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ports:
+      - "9200:9200"
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+//#endif
+
+volumes:
+//#if (UseSqlServer)
+  sqldata:
+//#elif (UsePostgreSQL)
+  pgdata:
+//#elif (UseSQLite)
+  sqlitedata:
+//#endif
+//#if (UseElasticSearch)
+  esdata:
+//#endif

@@ -1,0 +1,72 @@
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">
+<!--#if (UseNgxTranslate) -->
+        <h4>{{ 'ACCOUNT.LOGIN.TITLE' | translate }}</h4>
+<!--#else -->
+        <h4>Login</h4>
+<!--#endif -->
+      </div>
+      <div class="card-body">
+        <div *ngIf="errorMessage" class="alert alert-danger">
+          {{ errorMessage }}
+        </div>
+
+        <form (ngSubmit)="login()">
+          <div class="mb-3">
+<!--#if (UseNgxTranslate) -->
+            <label for="email" class="form-label">{{ 'ACCOUNT.EMAIL' | translate }}</label>
+<!--#else -->
+            <label for="email" class="form-label">Email</label>
+<!--#endif -->
+            <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email" required>
+          </div>
+
+          <div class="mb-3">
+<!--#if (UseNgxTranslate) -->
+            <label for="password" class="form-label">{{ 'ACCOUNT.PASSWORD' | translate }}</label>
+<!--#else -->
+            <label for="password" class="form-label">Password</label>
+<!--#endif -->
+            <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password" required>
+          </div>
+
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="rememberMe" [(ngModel)]="rememberMe" name="rememberMe">
+<!--#if (UseNgxTranslate) -->
+            <label class="form-check-label" for="rememberMe">{{ 'ACCOUNT.REMEMBER_ME' | translate }}</label>
+<!--#else -->
+            <label class="form-check-label" for="rememberMe">Remember me</label>
+<!--#endif -->
+          </div>
+
+          <button type="submit" class="btn btn-primary" [disabled]="loading">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm me-2"></span>
+<!--#if (UseNgxTranslate) -->
+            {{ 'ACCOUNT.LOGIN.SUBMIT' | translate }}
+<!--#else -->
+            Login
+<!--#endif -->
+          </button>
+        </form>
+
+        <hr>
+        <p class="mb-0">
+<!--#if (UseNgxTranslate) -->
+          {{ 'ACCOUNT.LOGIN.NO_ACCOUNT' | translate }}
+<!--#else -->
+          Don't have an account?
+<!--#endif -->
+          <a routerLink="/account/register">
+<!--#if (UseNgxTranslate) -->
+            {{ 'ACCOUNT.LOGIN.REGISTER_LINK' | translate }}
+<!--#else -->
+            Register here
+<!--#endif -->
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

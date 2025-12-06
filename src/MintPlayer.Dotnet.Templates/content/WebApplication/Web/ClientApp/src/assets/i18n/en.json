@@ -1,0 +1,54 @@
+{
+  "LANGUAGE": "Language",
+  "NAV": {
+    "HOME": "Home",
+    "LOGIN": "Login",
+    "REGISTER": "Register"
+  },
+  "HOME": {
+    "WELCOME": "Welcome to MintPlayer.Dotnet.WebApplication",
+    "DESCRIPTION": "This is a template for creating ASP.NET Core applications with Angular."
+  },
+  "ACCOUNT": {
+    "EMAIL": "Email",
+    "PASSWORD": "Password",
+    "CONFIRM_PASSWORD": "Confirm Password",
+    "FIRST_NAME": "First Name",
+    "LAST_NAME": "Last Name",
+    "REMEMBER_ME": "Remember me",
+    "CURRENT_PASSWORD": "Current Password",
+    "NEW_PASSWORD": "New Password",
+    "CONFIRM_NEW_PASSWORD": "Confirm New Password",
+    "LOGIN": {
+      "TITLE": "Login",
+      "SUBMIT": "Login",
+      "NO_ACCOUNT": "Don't have an account?",
+      "REGISTER_LINK": "Register here"
+    },
+    "REGISTER": {
+      "TITLE": "Register",
+      "SUBMIT": "Register",
+      "HAS_ACCOUNT": "Already have an account?",
+      "LOGIN_LINK": "Login here"
+    },
+    "PROFILE": {
+      "TITLE": "Profile",
+      "UPDATE": "Update Profile",
+      "CHANGE_PASSWORD": "Change Password",
+      "CHANGE_PASSWORD_SUBMIT": "Change Password"
+    },
+    "TWO_FACTOR": {
+      "TITLE": "Two-Factor Authentication",
+      "ENABLED": "Two-factor authentication is enabled.",
+      "NOT_ENABLED": "Two-factor authentication is not enabled. Enable it for extra security.",
+      "DISABLE": "Disable 2FA",
+      "SETUP": "Setup 2FA",
+      "SCAN_QR": "Scan QR Code",
+      "SCAN_INSTRUCTIONS": "Scan this QR code with your authenticator app (Google Authenticator, Microsoft Authenticator, etc.)",
+      "MANUAL_KEY": "Or enter this key manually:",
+      "VERIFICATION_CODE": "Verification Code",
+      "ENTER_CODE": "Enter the 6-digit code from your authenticator app",
+      "VERIFY_ENABLE": "Verify and Enable"
+    }
+  }
+}

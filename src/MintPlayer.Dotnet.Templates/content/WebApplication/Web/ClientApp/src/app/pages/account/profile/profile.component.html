@@ -1,0 +1,109 @@
+<div class="row">
+  <div class="col-md-8">
+    <div class="card mb-4">
+      <div class="card-header">
+<!--#if (UseNgxTranslate) -->
+        <h4>{{ 'ACCOUNT.PROFILE.TITLE' | translate }}</h4>
+<!--#else -->
+        <h4>Profile</h4>
+<!--#endif -->
+      </div>
+      <div class="card-body">
+        <div *ngIf="errorMessage" class="alert alert-danger">
+          {{ errorMessage }}
+        </div>
+        <div *ngIf="successMessage" class="alert alert-success">
+          {{ successMessage }}
+        </div>
+
+        <form *ngIf="user" (ngSubmit)="updateProfile()">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+<!--#if (UseNgxTranslate) -->
+              <label for="firstName" class="form-label">{{ 'ACCOUNT.FIRST_NAME' | translate }}</label>
+<!--#else -->
+              <label for="firstName" class="form-label">First Name</label>
+<!--#endif -->
+              <input type="text" class="form-control" id="firstName" [(ngModel)]="user.firstName" name="firstName">
+            </div>
+            <div class="col-md-6 mb-3">
+<!--#if (UseNgxTranslate) -->
+              <label for="lastName" class="form-label">{{ 'ACCOUNT.LAST_NAME' | translate }}</label>
+<!--#else -->
+              <label for="lastName" class="form-label">Last Name</label>
+<!--#endif -->
+              <input type="text" class="form-control" id="lastName" [(ngModel)]="user.lastName" name="lastName">
+            </div>
+          </div>
+
+          <div class="mb-3">
+<!--#if (UseNgxTranslate) -->
+            <label for="email" class="form-label">{{ 'ACCOUNT.EMAIL' | translate }}</label>
+<!--#else -->
+            <label for="email" class="form-label">Email</label>
+<!--#endif -->
+            <input type="email" class="form-control" id="email" [value]="user.email" disabled>
+          </div>
+
+          <button type="submit" class="btn btn-primary" [disabled]="loading">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm me-2"></span>
+<!--#if (UseNgxTranslate) -->
+            {{ 'ACCOUNT.PROFILE.UPDATE' | translate }}
+<!--#else -->
+            Update Profile
+<!--#endif -->
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+<!--#if (UseNgxTranslate) -->
+        <h4>{{ 'ACCOUNT.PROFILE.CHANGE_PASSWORD' | translate }}</h4>
+<!--#else -->
+        <h4>Change Password</h4>
+<!--#endif -->
+      </div>
+      <div class="card-body">
+        <form (ngSubmit)="changePassword()">
+          <div class="mb-3">
+<!--#if (UseNgxTranslate) -->
+            <label for="currentPassword" class="form-label">{{ 'ACCOUNT.CURRENT_PASSWORD' | translate }}</label>
+<!--#else -->
+            <label for="currentPassword" class="form-label">Current Password</label>
+<!--#endif -->
+            <input type="password" class="form-control" id="currentPassword" [(ngModel)]="currentPassword" name="currentPassword" required>
+          </div>
+
+          <div class="mb-3">
+<!--#if (UseNgxTranslate) -->
+            <label for="newPassword" class="form-label">{{ 'ACCOUNT.NEW_PASSWORD' | translate }}</label>
+<!--#else -->
+            <label for="newPassword" class="form-label">New Password</label>
+<!--#endif -->
+            <input type="password" class="form-control" id="newPassword" [(ngModel)]="newPassword" name="newPassword" required minlength="8">
+          </div>
+
+          <div class="mb-3">
+<!--#if (UseNgxTranslate) -->
+            <label for="confirmNewPassword" class="form-label">{{ 'ACCOUNT.CONFIRM_NEW_PASSWORD' | translate }}</label>
+<!--#else -->
+            <label for="confirmNewPassword" class="form-label">Confirm New Password</label>
+<!--#endif -->
+            <input type="password" class="form-control" id="confirmNewPassword" [(ngModel)]="confirmNewPassword" name="confirmNewPassword" required>
+          </div>
+
+          <button type="submit" class="btn btn-primary" [disabled]="loading">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm me-2"></span>
+<!--#if (UseNgxTranslate) -->
+            {{ 'ACCOUNT.PROFILE.CHANGE_PASSWORD_SUBMIT' | translate }}
+<!--#else -->
+            Change Password
+<!--#endif -->
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

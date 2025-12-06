@@ -1,0 +1,101 @@
+<div class="row">
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-header">
+<!--#if (UseNgxTranslate) -->
+        <h4>{{ 'ACCOUNT.TWO_FACTOR.TITLE' | translate }}</h4>
+<!--#else -->
+        <h4>Two-Factor Authentication</h4>
+<!--#endif -->
+      </div>
+      <div class="card-body">
+        <div *ngIf="errorMessage" class="alert alert-danger">
+          {{ errorMessage }}
+        </div>
+        <div *ngIf="successMessage" class="alert alert-success">
+          {{ successMessage }}
+        </div>
+
+        <div *ngIf="twoFactorEnabled">
+<!--#if (UseNgxTranslate) -->
+          <p class="text-success">{{ 'ACCOUNT.TWO_FACTOR.ENABLED' | translate }}</p>
+<!--#else -->
+          <p class="text-success">Two-factor authentication is enabled.</p>
+<!--#endif -->
+          <button class="btn btn-danger" (click)="disableTwoFactor()" [disabled]="loading">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm me-2"></span>
+<!--#if (UseNgxTranslate) -->
+            {{ 'ACCOUNT.TWO_FACTOR.DISABLE' | translate }}
+<!--#else -->
+            Disable 2FA
+<!--#endif -->
+          </button>
+        </div>
+
+        <div *ngIf="!twoFactorEnabled && !setupData">
+<!--#if (UseNgxTranslate) -->
+          <p>{{ 'ACCOUNT.TWO_FACTOR.NOT_ENABLED' | translate }}</p>
+<!--#else -->
+          <p>Two-factor authentication is not enabled. Enable it for extra security.</p>
+<!--#endif -->
+          <button class="btn btn-primary" (click)="setupTwoFactor()" [disabled]="loading">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm me-2"></span>
+<!--#if (UseNgxTranslate) -->
+            {{ 'ACCOUNT.TWO_FACTOR.SETUP' | translate }}
+<!--#else -->
+            Setup 2FA
+<!--#endif -->
+          </button>
+        </div>
+
+        <div *ngIf="setupData">
+<!--#if (UseNgxTranslate) -->
+          <h5>{{ 'ACCOUNT.TWO_FACTOR.SCAN_QR' | translate }}</h5>
+          <p>{{ 'ACCOUNT.TWO_FACTOR.SCAN_INSTRUCTIONS' | translate }}</p>
+<!--#else -->
+          <h5>Scan QR Code</h5>
+          <p>Scan this QR code with your authenticator app (Google Authenticator, Microsoft Authenticator, etc.)</p>
+<!--#endif -->
+
+          <div class="mb-3">
+            <img *ngIf="qrCodeDataUrl" [src]="qrCodeDataUrl" alt="QR Code" class="img-fluid" style="max-width: 200px;">
+          </div>
+
+          <div class="mb-3">
+<!--#if (UseNgxTranslate) -->
+            <label class="form-label">{{ 'ACCOUNT.TWO_FACTOR.MANUAL_KEY' | translate }}</label>
+<!--#else -->
+            <label class="form-label">Or enter this key manually:</label>
+<!--#endif -->
+            <code class="d-block p-2 bg-light">{{ setupData.sharedKey }}</code>
+          </div>
+
+          <form (ngSubmit)="verifyAndEnable()">
+            <div class="mb-3">
+<!--#if (UseNgxTranslate) -->
+              <label for="verificationCode" class="form-label">{{ 'ACCOUNT.TWO_FACTOR.VERIFICATION_CODE' | translate }}</label>
+<!--#else -->
+              <label for="verificationCode" class="form-label">Verification Code</label>
+<!--#endif -->
+              <input type="text" class="form-control" id="verificationCode" [(ngModel)]="verificationCode" name="verificationCode" maxlength="6" required>
+<!--#if (UseNgxTranslate) -->
+              <div class="form-text">{{ 'ACCOUNT.TWO_FACTOR.ENTER_CODE' | translate }}</div>
+<!--#else -->
+              <div class="form-text">Enter the 6-digit code from your authenticator app</div>
+<!--#endif -->
+            </div>
+
+            <button type="submit" class="btn btn-primary" [disabled]="loading || verificationCode.length !== 6">
+              <span *ngIf="loading" class="spinner-border spinner-border-sm me-2"></span>
+<!--#if (UseNgxTranslate) -->
+              {{ 'ACCOUNT.TWO_FACTOR.VERIFY_ENABLE' | translate }}
+<!--#else -->
+              Verify and Enable
+<!--#endif -->
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+version: '3.8'
+
+# Development overrides
+services:
+  web:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    build:
+      target: dotnet-build
+    volumes:
+      - ./Web:/src/Web
+      - ./Data:/src/Data
+      - ./Dtos:/src/Dtos

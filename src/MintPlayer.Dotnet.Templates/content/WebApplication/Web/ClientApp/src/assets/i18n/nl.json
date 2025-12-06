@@ -1,0 +1,54 @@
+{
+  "LANGUAGE": "Taal",
+  "NAV": {
+    "HOME": "Home",
+    "LOGIN": "Inloggen",
+    "REGISTER": "Registreren"
+  },
+  "HOME": {
+    "WELCOME": "Welkom bij MintPlayer.Dotnet.WebApplication",
+    "DESCRIPTION": "Dit is een template voor het maken van ASP.NET Core applicaties met Angular."
+  },
+  "ACCOUNT": {
+    "EMAIL": "E-mail",
+    "PASSWORD": "Wachtwoord",
+    "CONFIRM_PASSWORD": "Bevestig wachtwoord",
+    "FIRST_NAME": "Voornaam",
+    "LAST_NAME": "Achternaam",
+    "REMEMBER_ME": "Onthoud mij",
+    "CURRENT_PASSWORD": "Huidig wachtwoord",
+    "NEW_PASSWORD": "Nieuw wachtwoord",
+    "CONFIRM_NEW_PASSWORD": "Bevestig nieuw wachtwoord",
+    "LOGIN": {
+      "TITLE": "Inloggen",
+      "SUBMIT": "Inloggen",
+      "NO_ACCOUNT": "Nog geen account?",
+      "REGISTER_LINK": "Registreer hier"
+    },
+    "REGISTER": {
+      "TITLE": "Registreren",
+      "SUBMIT": "Registreren",
+      "HAS_ACCOUNT": "Heb je al een account?",
+      "LOGIN_LINK": "Log hier in"
+    },
+    "PROFILE": {
+      "TITLE": "Profiel",
+      "UPDATE": "Profiel bijwerken",
+      "CHANGE_PASSWORD": "Wachtwoord wijzigen",
+      "CHANGE_PASSWORD_SUBMIT": "Wachtwoord wijzigen"
+    },
+    "TWO_FACTOR": {
+      "TITLE": "Tweefactorauthenticatie",
+      "ENABLED": "Tweefactorauthenticatie is ingeschakeld.",
+      "NOT_ENABLED": "Tweefactorauthenticatie is niet ingeschakeld. Schakel het in voor extra beveiliging.",
+      "DISABLE": "2FA uitschakelen",
+      "SETUP": "2FA instellen",
+      "SCAN_QR": "Scan QR-code",
+      "SCAN_INSTRUCTIONS": "Scan deze QR-code met je authenticator-app (Google Authenticator, Microsoft Authenticator, etc.)",
+      "MANUAL_KEY": "Of voer deze sleutel handmatig in:",
+      "VERIFICATION_CODE": "Verificatiecode",
+      "ENTER_CODE": "Voer de 6-cijferige code in van je authenticator-app",
+      "VERIFY_ENABLE": "Verifieer en activeer"
+    }
+  }
+}

@@ -1,18 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net9.0</TargetFramework>
+		<TargetFramework>net10.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 
 		<PackageType>Template</PackageType>
 		<PackageId>MintPlayer.Dotnet.Templates</PackageId>
-		<PackageVersion>9.0.0</PackageVersion>
+		<PackageVersion>10.0.0</PackageVersion>
 		<Title>.NET Templates</Title>
 		<Authors>Pieterjan De Clippel</Authors>
 		<Company>MintPlayer</Company>
-		<Description>Templates for .NET Core</Description>
-		<PackageTags>Templates;IdentityServer;Single-sign-on;Server-side rendering;SEO</PackageTags>
+		<Description>ASP.NET Core with Angular template featuring SSR, Identity providers (IdentityServer/OpenIdDict), Bootstrap, translations, 2FA, external logins, ElasticSearch, Docker, and more</Description>
+		<PackageTags>Templates;IdentityServer;OpenIdDict;Single-sign-on;Server-side rendering;SEO;Angular;Bootstrap;Docker;ElasticSearch;2FA</PackageTags>
 		<RepositoryType>Git</RepositoryType>
 		<RepositoryUrl>https://github.com/MintPlayer/MintPlayer.Dotnet.Templates</RepositoryUrl>
 
@@ -31,15 +31,5 @@
 		<None Remove="content\**\node_modules\**\*;content\**\bin\**\*;content\**\obj\**\*" />
 	</ItemGroup>
 
-	<PropertyGroup>
-		<!-- Lists the versions of dependencies not built in this repo. Packages produced from this repo should be listed as a PackageVersionVariableReference.  -->
-		<GeneratedContentProperties>
-			DefaultNetCoreTargetFramework=$(DefaultNetCoreTargetFramework);
-		</GeneratedContentProperties>
-	</PropertyGroup>
-
-	<ItemGroup>
-		<GeneratedContent Include="generation/MintPlayer.Dotnet.WebApplication.Web.csproj.in" OutputPath="content/WebApplication/Web/MintPlayer.Dotnet.WebApplication.Web.csproj" />
-	</ItemGroup>
 
 </Project>

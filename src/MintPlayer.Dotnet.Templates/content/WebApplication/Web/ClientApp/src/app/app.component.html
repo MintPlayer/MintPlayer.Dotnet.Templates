@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/">MintPlayer.Dotnet.WebApplication</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+<!--#if (UseNgxTranslate) -->
+          <a class="nav-link" routerLink="/">{{ 'NAV.HOME' | translate }}</a>
+<!--#else -->
+          <a class="nav-link" routerLink="/">Home</a>
+<!--#endif -->
+        </li>
+      </ul>
+<!--#if (UseAnyIdentityProvider) -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+<!--#if (UseNgxTranslate) -->
+          <a class="nav-link" routerLink="/account/login">{{ 'NAV.LOGIN' | translate }}</a>
+<!--#else -->
+          <a class="nav-link" routerLink="/account/login">Login</a>
+<!--#endif -->
+        </li>
+        <li class="nav-item">
+<!--#if (UseNgxTranslate) -->
+          <a class="nav-link" routerLink="/account/register">{{ 'NAV.REGISTER' | translate }}</a>
+<!--#else -->
+          <a class="nav-link" routerLink="/account/register">Register</a>
+<!--#endif -->
+        </li>
+      </ul>
+<!--#endif -->
+<!--#if (UseNgxTranslate) -->
+      <div class="dropdown ms-2">
+        <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
+          {{ 'LANGUAGE' | translate }}
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="#" (click)="switchLanguage('en'); $event.preventDefault()">English</a></li>
+          <li><a class="dropdown-item" href="#" (click)="switchLanguage('nl'); $event.preventDefault()">Nederlands</a></li>
+          <li><a class="dropdown-item" href="#" (click)="switchLanguage('fr'); $event.preventDefault()">Fran&ccedil;ais</a></li>
+        </ul>
+      </div>
+<!--#endif -->
+    </div>
+  </div>
+</nav>
+
+<main class="container mt-4">
+  <router-outlet></router-outlet>
+</main>

@@ -1,0 +1,95 @@
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">
+<!--#if (UseNgxTranslate) -->
+        <h4>{{ 'ACCOUNT.REGISTER.TITLE' | translate }}</h4>
+<!--#else -->
+        <h4>Register</h4>
+<!--#endif -->
+      </div>
+      <div class="card-body">
+        <div *ngIf="errorMessage" class="alert alert-danger">
+          {{ errorMessage }}
+        </div>
+        <div *ngIf="successMessage" class="alert alert-success">
+          {{ successMessage }}
+        </div>
+
+        <form (ngSubmit)="register()">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+<!--#if (UseNgxTranslate) -->
+              <label for="firstName" class="form-label">{{ 'ACCOUNT.FIRST_NAME' | translate }}</label>
+<!--#else -->
+              <label for="firstName" class="form-label">First Name</label>
+<!--#endif -->
+              <input type="text" class="form-control" id="firstName" [(ngModel)]="firstName" name="firstName">
+            </div>
+            <div class="col-md-6 mb-3">
+<!--#if (UseNgxTranslate) -->
+              <label for="lastName" class="form-label">{{ 'ACCOUNT.LAST_NAME' | translate }}</label>
+<!--#else -->
+              <label for="lastName" class="form-label">Last Name</label>
+<!--#endif -->
+              <input type="text" class="form-control" id="lastName" [(ngModel)]="lastName" name="lastName">
+            </div>
+          </div>
+
+          <div class="mb-3">
+<!--#if (UseNgxTranslate) -->
+            <label for="email" class="form-label">{{ 'ACCOUNT.EMAIL' | translate }}</label>
+<!--#else -->
+            <label for="email" class="form-label">Email</label>
+<!--#endif -->
+            <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email" required>
+          </div>
+
+          <div class="mb-3">
+<!--#if (UseNgxTranslate) -->
+            <label for="password" class="form-label">{{ 'ACCOUNT.PASSWORD' | translate }}</label>
+<!--#else -->
+            <label for="password" class="form-label">Password</label>
+<!--#endif -->
+            <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password" required minlength="8">
+            <div class="form-text">Password must be at least 8 characters.</div>
+          </div>
+
+          <div class="mb-3">
+<!--#if (UseNgxTranslate) -->
+            <label for="confirmPassword" class="form-label">{{ 'ACCOUNT.CONFIRM_PASSWORD' | translate }}</label>
+<!--#else -->
+            <label for="confirmPassword" class="form-label">Confirm Password</label>
+<!--#endif -->
+            <input type="password" class="form-control" id="confirmPassword" [(ngModel)]="confirmPassword" name="confirmPassword" required>
+          </div>
+
+          <button type="submit" class="btn btn-primary" [disabled]="loading">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm me-2"></span>
+<!--#if (UseNgxTranslate) -->
+            {{ 'ACCOUNT.REGISTER.SUBMIT' | translate }}
+<!--#else -->
+            Register
+<!--#endif -->
+          </button>
+        </form>
+
+        <hr>
+        <p class="mb-0">
+<!--#if (UseNgxTranslate) -->
+          {{ 'ACCOUNT.REGISTER.HAS_ACCOUNT' | translate }}
+<!--#else -->
+          Already have an account?
+<!--#endif -->
+          <a routerLink="/account/login">
+<!--#if (UseNgxTranslate) -->
+            {{ 'ACCOUNT.REGISTER.LOGIN_LINK' | translate }}
+<!--#else -->
+            Login here
+<!--#endif -->
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
