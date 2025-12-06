@@ -41,7 +41,9 @@ jobs:
       working-directory: repository
       
     - name: Install templates
-      run: dotnet new install ./repository/src/MintPlayer.Dotnet.Templates/content/WebApplication
+      run: |
+        dotnet new uninstall MintPlayer.Dotnet.Templates || true
+        dotnet new install ./repository/src/MintPlayer.Dotnet.Templates/content/WebApplication
 
     - name: Create folder for test projects
       run: mkdir tmp && mkdir tmp/TestProject
@@ -49,7 +51,11 @@ jobs:
     - name: Create project from template
       run: |
         dotnet new sln
-        dotnet new mintplayer-web --skipRestore
+        dotnet new mintplayer-web --skipRestore -o .
+        echo "--- Created files ---"
+        find . -type f -name "*.csproj"
+        echo "--- Directory listing ---"
+        ls -la
         dotnet sln TestProject.sln add Web/TestProject.Web.csproj
         dotnet build
       working-directory: tmp/TestProject
