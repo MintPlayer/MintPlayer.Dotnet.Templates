@@ -541,7 +541,8 @@
         {
           "condition": "(!EnableOpenSearch)",
           "exclude": [
-            "Web/Server/Controllers/Web/OpenSearchController.cs"
+            "Web/Server/Controllers/Web/OpenSearchController.cs",
+            "Web/Services/OpenSearchService.cs"
           ]
         },
         {
